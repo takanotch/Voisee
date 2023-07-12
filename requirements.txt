@@ -5,3 +5,4 @@ SpeechRecognition
 sounddevice
 opencv-python
 matplotlib
+pyaudio
