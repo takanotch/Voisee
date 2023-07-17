@@ -5,4 +5,4 @@ SpeechRecognition
 sounddevice
 opencv-python
 matplotlib
-pyaudio
+streamlit-webrtc
