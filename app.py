@@ -16,6 +16,7 @@ import soundfile as sf
 import cv2
 import streamlit.components.v1 as stc
 from PIL import Image
+from streamlit_webrtc import webrtc_streamer
 
 def voice_input():
    
@@ -294,4 +295,11 @@ for i in range(st.session_state.count)[::-1]:
         with col2:
             st.write(f'<span style="color:#0FF;font-size:20pt">{text}</span>', unsafe_allow_html=True)
         st.write("---------------------------------------------------------------------------------------")
-        
+
+webrtc_streamer(
+    key="example",
+    video_frame_callback=callback,
+    rtc_configuration={  # Add this line
+        "iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]
+    }
+)
